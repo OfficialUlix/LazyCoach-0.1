@@ -1,0 +1,55 @@
+{
+  "expo": {
+    "name": "LazyCoach",
+    "slug": "lazycoach",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/LazyCoachLogo.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/LazyCoachLogo.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#1e293b"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.lazycoach.app",
+      "newArchEnabled": false,
+      "config": {
+        "usesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "package": "com.lazycoach.app",
+      "newArchEnabled": false,
+      "permissions": [
+        "android.permission.READ_CALENDAR",
+        "android.permission.WRITE_CALENDAR",
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.MODIFY_AUDIO_SETTINGS"
+      ]
+    },
+    "plugins": [
+      "expo-dev-client",
+      "expo-secure-store",
+      "expo-notifications",
+      "expo-calendar",
+      "expo-location",
+      "expo-camera",
+      "expo-image-picker",
+      "expo-av"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "dd992ead-5f31-42e4-9ff1-1de541152f2a"
+      }
+    },
+    "owner": "officialulix"
+  }
+}

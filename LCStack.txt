@@ -1,0 +1,240 @@
+# LazyCoach App - Complete Technical Stack Documentation
+
+## 📱 Application Overview
+**Name:** LazyCoach
+**Version:** 1.0.0
+**Description:** Personal Growth Partner - A coaching platform mobile application
+**Bundle ID (iOS):** com.lazycoach.app
+**Package ID (Android):** com.lazycoach.app
+**Owner:** officialulix
+**EAS Project ID:** dd992ead-5f31-42e4-9ff1-1de541152f2a
+
+## 🏗️ Core Technology Stack
+
+### **Frontend Framework**
+- **React Native:** 0.76.9
+- **React:** 18.3.1
+- **Expo SDK:** 52.0.0
+- **New Architecture:** Enabled (Fabric + TurboModules)
+
+### **Development Environment**
+- **Node.js:** 24.4.1
+- **npm:** 11.4.2
+- **Expo CLI:** 0.22.26
+- **TypeScript:** 5.3.3
+- **Xcode Tools:** 2409 (xcrun version 70)
+
+### **Build & Deployment**
+- **EAS CLI:** ≥ 12.0.0
+- **App Version Source:** Remote
+- **Development Client:** Enabled
+- **iOS Deployment Target:** 15.1+
+- **CocoaPods:** Latest (with deterministic UUIDs disabled)
+
+## 🎯 Platform Support
+
+### **iOS Configuration**
+- **Architecture:** New Architecture (Fabric) enabled
+- **Tablet Support:** Enabled
+- **Engine:** Hermes JavaScript Engine
+- **Encryption:** Non-exempt encryption (disabled)
+- **Privacy Manifest:** Aggregation enabled
+- **Code Signing:** Resource bundles disabled
+
+### **Android Configuration**
+- **Architecture:** New Architecture enabled
+- **Build Type:** APK for development
+- **Target SDK:** Latest compatible with RN 0.76.9
+
+### **Permissions**
+**Android:**
+- READ_CALENDAR / WRITE_CALENDAR
+- ACCESS_COARSE_LOCATION / ACCESS_FINE_LOCATION
+- CAMERA / RECORD_AUDIO / MODIFY_AUDIO_SETTINGS
+
+## 🧩 Core Dependencies & Features
+
+### **Navigation & UI**
+- **@react-navigation/native:** 7.1.17
+- **@react-navigation/stack:** 7.4.7
+- **@react-navigation/bottom-tabs:** 7.4.6
+- **react-native-screens:** 4.4.0
+- **react-native-safe-area-context:** 4.12.0
+- **react-native-gesture-handler:** 2.20.2
+- **react-native-reanimated:** 3.16.1 (with Babel plugin)
+
+### **Expo Modules**
+- **expo-dev-client:** 5.0.20
+- **expo-av:** 15.0.2 (Audio/Video)
+- **expo-calendar:** 14.0.6
+- **expo-camera:** 16.0.18
+- **expo-device:** 7.0.3
+- **expo-constants:** 17.0.8
+- **expo-image-picker:** 16.0.6
+- **expo-location:** 18.0.10
+- **expo-notifications:** 0.29.14
+- **expo-secure-store:** 14.0.1
+- **expo-document-picker:** 13.0.3
+- **expo-file-system:** 18.0.12
+
+### **Data & Storage**
+- **@react-native-async-storage/async-storage:** 1.23.1
+- **@react-native-community/netinfo:** 11.4.1
+
+### **Development & Testing**
+- **jest-expo:** 52.0.6
+- **@types/jest:** 30.0.0
+- **react-test-renderer:** 18.3.1
+- **@babel/core:** 7.25.2
+
+### **Code Quality**
+- **ESLint:** 9.33.0
+- **@typescript-eslint/eslint-plugin:** 8.39.0
+- **@typescript-eslint/parser:** 8.39.0
+- **Prettier:** 3.6.2
+
+## 🏛️ Application Architecture
+
+### **Project Structure** (66 TypeScript files)
+```
+src/
+├── components/          # Reusable UI components
+│   ├── ui/             # Basic UI elements
+│   ├── messaging/      # Chat components
+│   ├── onboarding/     # User onboarding flow
+│   ├── payment/        # Payment handling
+│   ├── scheduling/     # Booking & availability
+│   ├── search/         # Search & filtering
+│   └── verification/   # Identity verification
+├── context/            # React Context providers
+│   ├── AuthContext.tsx
+│   └── ThemeContext.tsx
+├── hooks/              # Custom React hooks
+├── navigation/         # Navigation configuration
+├── screens/            # Screen components
+│   ├── auth/          # Authentication screens
+│   ├── coach/         # Coach-specific screens
+│   ├── main/          # Main app screens
+│   ├── messages/      # Messaging screens
+│   ├── profile/       # User profile screens
+│   └── tabs/          # Tab-based screens
+├── services/          # Business logic & API services
+├── theme/             # Theme configuration
+├── types/             # TypeScript type definitions
+└── utils/             # Utility functions
+```
+
+### **TypeScript Configuration**
+- **Base:** expo/tsconfig.base
+- **Strict Mode:** Enabled
+- **No Implicit Any:** Enabled
+- **Strict Null Checks:** Enabled
+
+### **Babel Configuration**
+- **Preset:** babel-preset-expo
+- **Plugins:** react-native-reanimated/plugin (positioned last)
+
+## 🎨 UI & Design System
+
+### **Theme System**
+- **Context-based theming** with ThemeContext
+- **Color system** defined in theme/colors.ts
+- **Dark/Light mode support**
+
+### **Component Library**
+- **Custom components** with WorkaroundTextInput for iOS fixes
+- **Reusable UI components** (AnimatedButton, FadeInView, etc.)
+- **Loading states** and error boundaries
+- **Skeleton loaders** for better UX
+
+## 🔐 Security & Authentication
+
+### **Authentication System**
+- **Context-based auth** with AuthContext
+- **Secure storage** via expo-secure-store
+- **Biometric verification** support
+- **Session management** with AsyncStorage fallback
+
+### **Data Security**
+- **Secure local storage** for sensitive data
+- **Network security** via NetInfo monitoring
+- **Document handling** with expo-document-picker
+
+## 📊 Performance & Monitoring
+
+### **Performance Services**
+- **Custom PerformanceService** for monitoring
+- **FPS tracking** and memory usage monitoring
+- **API response time tracking**
+- **Navigation performance** monitoring
+
+### **Service Architecture**
+- **ServiceManager** for coordinated service initialization
+- **Modular services** (Analytics, Cache, Data, Messaging, etc.)
+- **Graceful error handling** and service dependencies
+
+## 🔧 Development Workflow
+
+### **Build Profiles**
+- **ios-dev-sim:** iOS Simulator development build
+- **android-dev-apk:** Android APK development build
+
+### **Scripts**
+- **start:** expo start
+- **ios:** expo run:ios
+- **android:** expo run:android
+- **web:** expo start --web
+- **lint:** ESLint validation
+- **format:** Prettier formatting
+- **test:** Jest testing
+
+### **Code Standards**
+- **TypeScript strict mode**
+- **ESLint + Prettier** for code formatting
+- **Modular architecture** with clear separation of concerns
+- **Error boundaries** for robust error handling
+
+## 📱 Key Features
+
+### **User Management**
+- **Dual user types:** Client & Coach
+- **Profile management** with verification system
+- **Authentication flow** with secure storage
+
+### **Coaching Platform**
+- **Session booking** with availability picker
+- **Real-time messaging** with typing indicators
+- **Payment processing** with secure payment sheets
+- **Calendar integration** for scheduling
+
+### **Media & Communication**
+- **Camera integration** for profile photos
+- **Image picker** for document uploads
+- **Audio/Video** capabilities via expo-av
+- **Push notifications** for engagement
+
+### **Location & Services**
+- **Location services** for coach discovery
+- **Search & filtering** capabilities
+- **Document verification** system
+- **Offline data** handling with caching
+
+## 🚀 Deployment & Distribution
+
+### **iOS Deployment**
+- **Development builds** via EAS
+- **Simulator support** for testing
+- **App Store distribution** ready
+
+### **Android Deployment**
+- **APK builds** for development
+- **Play Store distribution** ready
+- **Permissions properly configured**
+
+---
+
+**Last Updated:** August 2025
+**Architecture Status:** Production Ready
+**New Architecture:** ✅ Enabled (Fabric + TurboModules)
+**Security:** ✅ Configured with best practices
+**Performance:** ✅ Monitored and optimized
