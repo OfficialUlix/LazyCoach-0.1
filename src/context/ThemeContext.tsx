@@ -94,12 +94,13 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     };
 
     loadThemePreferences();
-  }, [systemColorScheme]);
+  }, []); // Remove systemColorScheme dependency to prevent loop
 
   // Update theme when system theme changes (if auto mode is enabled)
   useEffect(() => {
-    if (isAutoTheme && isLoaded) {
-      setThemeName(systemColorScheme === 'dark' ? 'dark' : 'light');
+    if (isAutoTheme && isLoaded && systemColorScheme) {
+      const newTheme = systemColorScheme === 'dark' ? 'dark' : 'light';
+      setThemeName(newTheme);
     }
   }, [systemColorScheme, isAutoTheme, isLoaded]);
 
@@ -121,7 +122,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     try {
       setIsAutoTheme(auto);
       
-      if (auto) {
+      if (auto && systemColorScheme) {
         // Switch to system theme
         const systemTheme = systemColorScheme === 'dark' ? 'dark' : 'light';
         setThemeName(systemTheme);

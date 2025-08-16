@@ -143,7 +143,7 @@ const PaymentMethodsScreen: React.FC = () => {
   const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: theme.colors.background,
+      backgroundColor: theme.background,
     },
     content: {
       flex: 1,
@@ -155,12 +155,12 @@ const PaymentMethodsScreen: React.FC = () => {
     title: {
       fontSize: 28,
       fontWeight: '700',
-      color: theme.colors.text,
+      color: theme.text,
       marginBottom: 8,
     },
     subtitle: {
       fontSize: 16,
-      color: theme.colors.textSecondary,
+      color: theme.textSecondary,
     },
     methodsList: {
       flex: 1,
@@ -178,37 +178,37 @@ const PaymentMethodsScreen: React.FC = () => {
     emptyTitle: {
       fontSize: 20,
       fontWeight: '600',
-      color: theme.colors.text,
+      color: theme.text,
       marginBottom: 8,
       textAlign: 'center',
     },
     emptyDescription: {
       fontSize: 16,
-      color: theme.colors.textSecondary,
+      color: theme.textSecondary,
       textAlign: 'center',
       marginBottom: 24,
       lineHeight: 22,
     },
     addMethodButton: {
-      backgroundColor: theme.colors.primary,
+      backgroundColor: theme.primary,
       borderRadius: 12,
       padding: 16,
       alignItems: 'center',
       marginTop: 24,
     },
     addMethodButtonText: {
-      color: theme.colors.primaryText,
+      color: theme.primaryText,
       fontSize: 16,
       fontWeight: '600',
     },
     footer: {
       padding: 20,
       borderTopWidth: 1,
-      borderTopColor: theme.colors.border,
+      borderTopColor: theme.border,
     },
     footerText: {
       fontSize: 14,
-      color: theme.colors.textSecondary,
+      color: theme.textSecondary,
       textAlign: 'center',
       lineHeight: 20,
     },
@@ -278,7 +278,7 @@ const PaymentMethodsScreen: React.FC = () => {
         </ScrollView>
 
         <View style={styles.footer}>
-          <Text style={styles.footer}>
+          <Text style={styles.footerText}>
             🔒 Your payment information is encrypted and secure. We never store your full card details.
           </Text>
         </View>

@@ -3,6 +3,7 @@ export interface ColorScheme {
   primary: string;
   primaryLight: string;
   primaryDark: string;
+  primaryText: string;
   
   // Secondary colors  
   secondary: string;
@@ -49,6 +50,7 @@ export const lightColors: ColorScheme = {
   primary: '#0066CC',
   primaryLight: '#3385D6',
   primaryDark: '#004C99',
+  primaryText: '#FFFFFF',
   
   // Secondary - Complementary accent
   secondary: '#FF6B35',
@@ -95,6 +97,7 @@ export const darkColors: ColorScheme = {
   primary: '#4A9EFF',
   primaryLight: '#6BB3FF',
   primaryDark: '#2A7EE8',
+  primaryText: '#FFFFFF',
   
   // Secondary - Warm orange for contrast
   secondary: '#FF7A4D',
@@ -141,6 +144,7 @@ export const oceanColors: ColorScheme = {
   primary: '#008B8B',
   primaryLight: '#20A5A5',
   primaryDark: '#006B6B',
+  primaryText: '#FFFFFF',
   
   // Secondary - Coral accent
   secondary: '#FF7F7F',
@@ -187,6 +191,7 @@ export const sunsetColors: ColorScheme = {
   primary: '#FF6B35',
   primaryLight: '#FF8A5C',
   primaryDark: '#E55A2B',
+  primaryText: '#FFFFFF',
   
   // Secondary - Deep purple
   secondary: '#8B5CF6',
